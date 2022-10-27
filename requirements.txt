@@ -5,7 +5,7 @@ pip==21.0.1
 attrs==20.3.0
 toml==0.10.2
 wheel==0.36.2
-openssl==1.1.1k
+openssl==1.1.1
 cryptography==3.4.7
 pillow==8.2.0
 docutils==0.17
