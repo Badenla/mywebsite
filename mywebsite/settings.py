@@ -42,8 +42,6 @@ INSTALLED_APPS = [
 CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ALLOWED_ORIGINS = [
-    'https://cors-test.codehappy.dev',
-    'http://127.0.0.1:8000',
 ]
 
 default_app_config = "myapp.apps.MyAppConfig"
