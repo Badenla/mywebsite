@@ -1,6 +1,10 @@
 import os
 from pathlib import Path
 import django_heroku
+from corsheaders.defaults import default_headers
+from corsheaders.signals import check_request_enabled
+
+
 # from boto.s3.connection import S3Connection
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -33,17 +37,45 @@ INSTALLED_APPS = [
     'task',
 ]
 
-CSRF_TRUSTED_ORIGINS = ['https://https://cors-test.codehappy.dev/']
+# CSRF_TRUSTED_ORIGINS = ['https://https://cors-test.codehappy.dev/']
 
 CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ALLOWED_ORIGINS = [
-        'https://https://cors-test.codehappy.dev/',
+    'http://127.0.0.1:8000/',
+    "https://example.com",
+    "https://sub.example.com",
+    "http://localhost:8080",
+    "https://cors-test.codehappy.dev/"
 ]
+
+default_app_config = "myapp.apps.MyAppConfig"
 
 CORS_ALLOW_CREDENTIALS = True
 
-CORS_ALLOW_HEADERS = ['*']
+CORS_ALLOW_HEADERS = [
+    "accept",
+    "accept-encoding",
+    "authorization",
+    "content-type",
+    "dnt",
+    "origin",
+    "user-agent",
+    "x-csrftoken",
+    "x-requested-with",
+]
+
+
+CORS_ALLOW_HEADERS = list(default_headers) + [
+    "my-custom-header",
+]
+
+def cors_allow_api_to_everyone(sender, request, **kwargs):
+    return request.path.startswith("/api/")
+
+# myapp/handlers.py
+
+check_request_enabled.connect(cors_allow_api_to_everyone)
 
 CORS_ALLOW_METHODS = [
     'GET'
