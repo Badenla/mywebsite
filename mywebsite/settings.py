@@ -1,13 +1,13 @@
 import os
 from pathlib import Path
-from boto.s3.connection import S3Connection
+# from boto.s3.connection import S3Connection
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 from django.conf.global_settings import STATICFILES_DIRS
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-s3 = S3Connection(os.environ['S3_KEY'], os.environ['S3_SECRET'])
+# s3 = S3Connection(os.environ['S3_KEY'], os.environ['S3_SECRET'])
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
