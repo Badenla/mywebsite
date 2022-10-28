@@ -20,6 +20,18 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Application definition
+
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'corsheaders',
+]
+
 CSRF_TRUSTED_ORIGINS = ['https://https://cors-test.codehappy.dev/']
 
 CORS_ALLOW_ALL_ORIGINS = True
@@ -40,19 +52,6 @@ CORS_ALLOW_HEADERS = [
 
 CORS_ALLOW_METHODS = [
     'GET'
-]
-
-
-# Application definition
-
-INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -86,6 +85,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'mywebsite.wsgi.application'
+
 
 
 # Database
@@ -136,6 +136,9 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_TMP = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS=[
+    os.path.join(BASE_DIR, 'static')
+]
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
