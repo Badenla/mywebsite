@@ -64,4 +64,3 @@ tblib~=1.7.0
 setuptools~=52.0.0
 zipp~=3.4.1
 Cython~=0.29.23
-pywin32~=304
