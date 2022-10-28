@@ -29,7 +29,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'corsheaders',
 ]
 
 CSRF_TRUSTED_ORIGINS = ['https://https://cors-test.codehappy.dev/']
