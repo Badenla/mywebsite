@@ -37,7 +37,9 @@ CSRF_TRUSTED_ORIGINS = ['https://https://cors-test.codehappy.dev/']
 
 CORS_ALLOW_ALL_ORIGINS = True
 
-CORS_ALLOWED_ORIGINS = ['*']
+CORS_ALLOWED_ORIGINS = [
+        'https://https://cors-test.codehappy.dev/',
+]
 
 CORS_ALLOW_CREDENTIALS = True
 
