@@ -39,12 +39,7 @@ CORS_ALLOW_HEADERS = [
 ]
 
 CORS_ALLOW_METHODS = [
-    "DELETE",
-    "GET",
-    "OPTIONS",
-    "PATCH",
-    "POST",
-    "PUT",
+    'GET'
 ]
 
 
